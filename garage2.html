@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Web Page</title>
     <link rel="stylesheet" href="style2.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -14,6 +15,13 @@
             </a>
         </div>
         <h1>Online Garage</h1>
+        <form class="search-bar" action="/search" method="get">
+            <input type="text" name="query" placeholder="Search..." required>
+            <!-- Search Icon as a button -->
+            <button type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
     </header>
     <nav class="navbar">
         <div id="cart-modal" class="cart-modal">
@@ -39,8 +47,10 @@
         </div>
     </div>
     <div class="startingimg">
-    <h1>Indias Most trusted online shopping platform</h1>
-    <p>We have all the tools and spare parts for your needs with the best discounts for you</p>
+        <div class="imginimg">
+            <h1>Indias Most trusted online shopping platform</h1>
+            <p>We have all the tools and spare parts for your needs with the best discounts for you</p>
+        </div>
     </div>
     <div class="info">
         <div class="infobox">
@@ -83,7 +93,8 @@
     <section id="bestsellers">
         
         <div class="product-box">
-            <img src="https://images.meesho.com/images/products/399723719/wioiu_1200.jpg" alt="">
+            <!-- <img src="https://images.meesho.com/images/products/399723719/wioiu_1200.jpg" alt=""> -->
+           <img src="http://127.0.0.1:3000/my_website-main/my_website-main/two.html" alt="">
             <h5>YWHWXB 46 Pieces Mechanic</h5>
             <p class="product-price">₹470</p>
             <button class="cart-btn">add to cart</button>
@@ -104,16 +115,19 @@
         <img src="https://cdn.moglix.com/p/5b9K9nqBReLMh-large.jpg" alt="Windek 4001 Heavy Duty Tyre Inflator">            
         <h5>Windek 4001 Heavy Duty Tyre Inflator</h5>
         <p class="product-price">₹2,117</p>
+        <button class="cart-btn">add to cart</button>
         </div>
         <div class="product-box">
             <img src="https://cdn.moglix.com/p/5b9K9nqBReLMh-large.jpg" alt="Windek 4001 Heavy Duty Tyre Inflator">            
             <h5>Windek 4001 Heavy Duty Tyre Inflator</h5>
             <p>₹2,117</p>
+            <button class="cart-btn">add to cart</button>
             </div>
         <div class="product-box">
         <img src="https://cdn.moglix.com/p/Ci4P15CrazefU-large.jpg" alt="">
         <h5>Btali BT 1050 HPW 1900W 160bar High Pressure Washer</h5>
-        <p>₹5,295 <sub style="font-size: 0.7em;">+₹954 GST</sub></p>
+        <p class="product-price">₹5,295</p>
+        <button class="cart-btn">add to cart</button>
         </div>
         
         
@@ -126,30 +140,33 @@
         <div class="product-box">
             <img src="https://m.media-amazon.com/images/I/81G4lDiwHjL.jpg" alt="Hi-Spec 124piece Home & Garage Mechanics Tool Set">
             <h5>Hi-Spec 124piece Home & Garage Mechanics Tool Set</h5>
-            <p></p>
+            <p class="product-price"></p>
+            <button class="cart-btn">add to cart</button>
         </div>
         <div class="product-box">
             <img src="https://www.familyhandyman.com/wp-content/uploads/2021/03/19-Automotive-Tools-Every-Mechanic-Needs_FT_via-amazon.com_.jpg" alt="Best tool">
-            <p>Heavy jack</p>
+            <h5>Heavy jack</h5>
+            <p class="product-price"></p>
+            <button class="cart-btn">add to cart</button>
         </div>
         <div class="product-box">
             <img src="https://m.media-amazon.com/images/I/71DZ3ov8kLL._AC_UY327_FMwebp_QL65_.jpg" alt="7MM Fendor Clip Lock for Cars Pack of 100 PCS ">
            <h5>7MM Fendor Clip Lock for Cars Pack of 100 PCS </h5>
-            <p>₹350</p>
+            <p class="product-price">₹350</p>
+            <button class="cart-btn">add to cart</button>
         </div>
         <div class="product-box">
             <img src="https://m.media-amazon.com/images/I/71GLQKDOpVL.jpg" alt="Buy EOPOAYI 35mm Air Filter">
            <h5>Buy EOPOAYI 35mm Air Filter</h5>
-            <p>₹ 2,969</p>
+            <p class="product-price">₹ 2,969</p>
+            <button class="cart-btn">add to cart</button>
         </div>
         
         <!-- More product boxes can be added similarly -->
     </section>
 
     <section class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+    <p>Content of the page</p>       
     </section>
 
     <script src="garage2.js"></script>
