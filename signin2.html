@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Sign Up</title>
+  <link rel="stylesheet" href="signin2.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form action="#" method="POST" enctype="multipart/form-data">
+            <h1>Create an Account</h1>
+            <label for="username">Username</label>
+            <input type="text" id="username" minlength="4" placeholder="Enter username" required>
+            
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" placeholder="Enter phone number">
+            
+            <label for="email">Email</label>
+            <input type="email" placeholder="Enter email">
+            
+            <label for="password">Password</label>
+            <input type="password" placeholder="Enter password">
+            
+            <label for="bday">Birthday</label>
+            <input type="date">
+            
+            <!-- <label for="qwe">Quantity</label>
+            <input type="number" id="qwe" min="0" max="99"> -->
+            
+            <div class="radio-group">
+                <label>Title:</label>
+                <label><input type="radio" name="title" value="Mr"> Mr.</label>
+                <label><input type="radio" name="title" value="Ms"> Ms.</label>
+            </div>
+            
+            <label for="payment">Payment</label>
+            <select id="payment">
+                <option value="visa">Visa</option>
+                <option value="giftcard">Giftcard</option>
+                <option value="upi">UPI</option>
+            </select>
+            
+            <label for="file">Upload File</label>
+            <input type="file" id="file" accept="image/png, image/jpeg">
+            
+            <button type="submit">Sign Up</button>
+            <button type="reset">Reset</button>
+        </form>
+    </div>
+</body>
+</html>

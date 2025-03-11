@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Web Page</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="garage2.html">
+                <img src="images/garagelogo.png" alt="Garage Logo" class="logo" id="logo1">
+            </a>
+        </div>
+        <h1>Online Garage</h1>
+    </header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#" id="cart-link">Cart (0)</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="garage2.html">Home</a></li>
+            <li><a href="form.html">Login</a></li>
+        </ul>
+    </nav>
+    <div id="cart-modal" class="cart-modal hidden">
+        <div class="cart-content">
+            <span id="close-cart">&times;</span>
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+        </div>
+    </div>
+    <h2>Our Collections</h2>
+    <hr>
+    <section id="bestsellers">
+        <div class="product-box">
+            <img src="https://images.meesho.com/images/products/399723719/wioiu_1200.jpg" alt="">
+            <h5>YWHWXB 46 Pieces Mechanic Tool Kit</h5>
+            <p>₹470</p>
+            <button>add to cart</button>
+        </div>
+        <div class="product-box">
+            <img src="https://m.media-amazon.com/images/I/712G-NSjdXL.jpg" alt="Ingco Impact Wrench, 2300rpm">
+            <h5>Ingco Impact Wrench, 2300rpm</h5>
+            <p>₹6,199</p>
+            <button>add to cart</button>
+        </div>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const cartLink = document.getElementById("cart-link");
+            const cartModal = document.getElementById("cart-modal");
+            const closeCart = document.getElementById("close-cart");
+            const cartItemsList = document.getElementById("cart-items");
+
+            function updateCartCount() {
+                cartLink.textContent = `Cart (${cart.length})`;
+            }
+
+            function renderCart() {
+                cartItemsList.innerHTML = "";
+                cart.forEach(item => {
+                    const li = document.createElement("li");
+                    li.innerHTML = `<img src="${item.image}" width="50"> ${item.name} - ${item.price}`;
+                    cartItemsList.appendChild(li);
+                });
+            }
+
+            document.querySelectorAll(".product-box").forEach(productBox => {
+                const button = productBox.querySelector("button");
+                if (button) {
+                    button.addEventListener("click", function() {
+                        const product = {
+                            name: productBox.querySelector("h5").textContent,
+                            price: productBox.querySelector("p").textContent,
+                            image: productBox.querySelector("img").src
+                        };
+                        
+                        cart.push(product);
+                        localStorage.setItem("cart", JSON.stringify(cart));
+                        updateCartCount();
+                        alert("Product added to cart!");
+                    });
+                }
+            });
+
+            cartLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    renderCart();
+    cartModal.style.display = "block";  // Show the cart modal
+});
+
+closeCart.addEventListener("click", function() {
+    cartModal.style.display = "none";  // Hide the cart modal
+});
+
+
+            updateCartCount();
+        });
+    </script>
+   
+</body>
+</html>
